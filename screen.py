@@ -9,9 +9,10 @@ mainWindow = tkinter.Tk()
 
 mainWindow.title("Grid Demo")
 mainWindow.geometry("640x480-8-20")
+mainWindow['padx'] = 8
 
 label = tkinter.Label(mainWindow, text="Tkinter Grid Demo")
-label.grid(row=0, column=0, columnspan=3)
+label.grid(row=0, column=0, columnspan=4)
 
 mainWindow.columnconfigure(0, weight=1)
 mainWindow.columnconfigure(1, weight=1)
@@ -88,6 +89,12 @@ yearSpin = tkinter.Spinbox(dateFrame, width=5, from_=2000, to=2099)
 daySpin.grid(row=1, column=0)
 monthSpin.grid(row=1, column=1)
 yearSpin.grid(row=1, column=2)
+
+#Buttons
+okButton = tkinter.Button(mainWindow, text="OK")
+cancelButton = tkinter.Button(mainWindow, text="Cancel", command=mainWindow.destroy)
+okButton.grid(row=4, column=3, sticky='e')
+cancelButton.grid(row=4, column=4, sticky='w')
 
 mainWindow.mainloop()
 
